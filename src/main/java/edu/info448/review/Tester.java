@@ -11,5 +11,29 @@ public class Tester {
 		Dog dog = new Dog();
 		dog.bark();
 		dog.walk();
+
+		Dog[] pups = Dog.createPuppies(3);
+		System.out.println(Arrays.toString(pups));
+
+		Husky husky = new Husky("Rambo");
+		husky.bark();
+		husky.pullSled();
+
+		Dog v1 = new Husky();
+		v1.bark();
+
+		ArrayList<Huggable> hugList = new ArrayList<Huggable>(); //a list of huggable things
+		hugList.add(new Husky()); //a Husky is Huggable
+		hugList.add(new TeddyBear()); //so are Teddybears!
+
+		//enhanced for loop ("foreach" loop)
+		//read: "for each Huggable in the hugList"
+		for(Huggable thing : hugList) {
+			thing.hug();
+		}
+
+		dog.speak();
+
+		GiftBox box = new GiftBox<Husky>(husky);
 	}
 }
